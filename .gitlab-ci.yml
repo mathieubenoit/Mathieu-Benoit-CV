@@ -1,10 +1,12 @@
 image: gitlab-registry.cern.ch/ci-tools/ci-worker:latex-cc7
 
-compile_h35demonirrad:
-  before_script:
-    - yum install -y texlive ghostscript latexmk libfontenc texlive-collection-latex texlive-*
+compile_CV:
+
   script:
+    - export PATH=/cvmfs/sft.cern.ch/lcg/external/texlive/2016/bin/x86_64-linux:$PATH
     - pdflatex resume.tex
+    
   artifacts:
     paths:
-      - resume.pdf
+      - "*.pdf"
+
