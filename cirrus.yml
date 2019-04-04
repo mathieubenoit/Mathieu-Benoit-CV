@@ -1,0 +1,10 @@
+image: gitlab-registry.cern.ch/ci-tools/ci-worker:latex-cc7
+
+compile_h35demonirrad:
+  before_script:
+    - yum install -y texlive ghostscript latexmk libfontenc texlive-collection-latex texlive-*
+  script:
+    - pdflatex resume.tex
+  artifacts:
+    paths:
+      - resume.pdf
