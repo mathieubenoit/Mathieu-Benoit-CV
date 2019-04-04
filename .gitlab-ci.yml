@@ -7,4 +7,6 @@ compile_CV:
   artifacts:
     paths:
       - "*.pdf"
+  allow_failure: true
+
 
